@@ -1,6 +1,6 @@
 # ChessNavio
 
-Официальные выпуски расширения ChessNavio для Chrome, Edge и Яндекс Браузера.
+Исходный код расширения ChessNavio по лицензии GPL-3.0.
 
 ChessNavio показывает шахматные подсказки прямо рядом с доской: основной ход,
 короткую идею и варианты под выбранный уровень. Завершённую партию можно
@@ -8,62 +8,40 @@ ChessNavio показывает шахматные подсказки прямо
 [chessnavio.ru/analyze](https://chessnavio.ru/analyze).
 
 Анализ выполняется на вашем компьютере. Во время партии позиции и подсказки не
-отправляются на сервер. Первые 3 партии или тренировки каждые 30 дней доступны
-бесплатно.
+отправляются на сервер.
 
 Сайт: [chessnavio.ru](https://chessnavio.ru)
 
-## Скачать
+## Установка
 
-Актуальный выпуск:
-[ChessNavio 1.3.3](https://github.com/12hsrate-hub/chessnavio-releases/releases/latest).
+ChessNavio устанавливается из
+[Chrome Web Store](https://chromewebstore.google.com/detail/chessnavio/plegfgbhkjlghbpfkbihkennpjecaigd);
+браузер обновляет его сам. Пошагово:
+[chessnavio.ru/install](https://chessnavio.ru/install?utm_source=github&utm_medium=referral&utm_content=readme).
 
-Для установки скачивайте:
+Если ChessNavio у вас установлен вручную из ZIP, поставьте версию из Chrome Web
+Store рядом, войдите и проверьте её; старую копию удаляйте после проверки.
 
-- `chessnavio-*-chrome-standard.zip` — обычная версия для всех компьютеров.
+## Что здесь лежит
 
-Архив Max в 1.3.3 опубликован только для совместимости встроенного обновления
-у старых установок; выбирать его для новой установки не нужно.
+- Начиная с 2.0.0 выпуски содержат только исходный код: архив
+  `ChessNavio-extension-source-*.tar.gz` (расширение, пакеты, из которых оно
+  собирается, скрипты сборки), исходники встроенных Stockfish.js и Maia,
+  список лицензий, SBOM и `SHA256SUMS.txt`. Архивов для установки в них нет.
+- Выпуски до 1.3.3 включительно оставлены без изменений: на них ссылаются
+  уже установленные вручную копии.
 
-Рядом публикуется `SHA256SUMS.txt` — сравните контрольную сумму перед
-установкой.
-
-**Пошаговая установка** (рекомендуется):
-[chessnavio.ru/install](https://chessnavio.ru/install?utm_source=github&utm_medium=referral&utm_campaign=active_hints_launch&utm_content=release_notes)
-
-VirusTotal для текущей версии 1.3.3:
-
-- [обычная версия](https://www.virustotal.com/gui/file/1b75328633a1da7af1a2347b93e20e96e48ef904e9e959aff2ebc3c94683021b)
-
-## Что умеет расширение
-
-- подсказка сразу, по шагам или после собственного хода;
-- уровень хода от клубного до максимального;
-- оценка позиции и до трёх продолжений;
-- разбор ошибок после партии;
-- Lichess, Chess.com, World Chess и Chess King — с предупреждением о правилах
-  площадки.
-
-Подробнее о режимах: [chessnavio.ru/chess-helper](https://chessnavio.ru/chess-helper).
-
-## Безопасность и прозрачность
-
-- Исходный код продукта и инфраструктура — в закрытом репозитории. Здесь только
-  готовые файлы выпуска и пользовательская документация.
-- Стабильные выпуски публикуются как **неизменяемые**: после публикации GitHub
-  не позволяет заменить файлы или перенести тег.
-- Встроенный Stockfish распространяется по GPLv3; соответствующие исходники
-  приложены к релизу.
-- Перед использованием подсказок проверьте правила выбранной шахматной
-  площадки.
+Встроенные Stockfish.js и Maia распространяются по GPLv3, поэтому исходный код
+каждой опубликованной версии расширения выкладывается здесь. Стабильные
+выпуски **неизменяемы**: GitHub не позволяет заменить их файлы или перенести
+тег.
 
 Проверка неизменяемости выпуска (GitHub CLI):
 
 ```bash
-gh release verify v1.3.3 --repo 12hsrate-hub/chessnavio-releases
-gh release verify-asset v1.3.3 \
-  ./chessnavio-1.3.3-chrome-standard.zip \
-  --repo 12hsrate-hub/chessnavio-releases
+gh release verify v2.0.0 --repo 12hsrate-hub/chessnavio-releases
 ```
+
+Перед использованием подсказок проверьте правила выбранной шахматной площадки.
 
 Поддержка: [support@chessnavio.ru](mailto:support@chessnavio.ru)
